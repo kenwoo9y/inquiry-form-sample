@@ -1,10 +1,12 @@
 package com.example.inquiryformsample.controller;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import com.example.inquiryformsample.entity.Inquiry;
 import com.example.inquiryformsample.form.InquiryForm;
 import com.example.inquiryformsample.service.InquiryService;
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,6 +28,15 @@ public class InquiryController {
     @Autowired
     public InquiryController(InquiryService inquiryService) {
         this.inquiryService = inquiryService;
+    }
+
+    @GetMapping
+    public String index(Model model) {
+        List<Inquiry> inquiries = inquiryService.getAll();
+        model.addAttribute("inquiries", inquiries);
+        model.addAttribute("title", "Inquiry Index");
+
+        return "index";
     }
 
     @GetMapping("/form")
