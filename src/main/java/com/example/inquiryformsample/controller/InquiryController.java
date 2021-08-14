@@ -6,7 +6,6 @@ import java.util.List;
 import com.example.inquiryformsample.entity.Inquiry;
 import com.example.inquiryformsample.form.InquiryForm;
 import com.example.inquiryformsample.service.InquiryService;
-import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
