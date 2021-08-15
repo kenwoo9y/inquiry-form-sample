@@ -8,16 +8,16 @@ public class Inquiry {
     private String name;
     private String email;
     private String contents;
-    private LocalDateTime createdDate;
+    private LocalDateTime createdDateTime;
 
     public Inquiry() {}
 
-    public Inquiry(int id, String name, String email, String contents, LocalDateTime createdDate) {
+    public Inquiry(int id, String name, String email, String contents, LocalDateTime createdDateTime) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.contents = contents;
-        this.createdDate = createdDate;
+        this.createdDateTime = createdDateTime;
     }
 
     public int getId() {
@@ -52,12 +52,12 @@ public class Inquiry {
 		this.contents = contents;
 	}
 
-	public LocalDateTime getCreatedDate() {
-		return createdDate;
+	public LocalDateTime getCreatedDateTime() {
+		return createdDateTime;
 	}
     
-	public void setCreatedDate(LocalDateTime createdDate) {
-		this.createdDate = createdDate;
+	public void setCreatedDateTime(LocalDateTime createdDateTime) {
+		this.createdDateTime = createdDateTime;
 	}
 
 }

@@ -73,7 +73,7 @@ public class InquiryController {
         inquiry.setName(inquiryForm.getName());
         inquiry.setEmail(inquiryForm.getEmail());
         inquiry.setContents(inquiryForm.getContents());
-        inquiry.setCreatedDate(LocalDateTime.now());
+        inquiry.setCreatedDateTime(LocalDateTime.now());
 
         inquiryService.save(inquiry);
 

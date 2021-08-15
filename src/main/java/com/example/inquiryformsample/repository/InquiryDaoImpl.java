@@ -23,20 +23,20 @@ public class InquiryDaoImpl implements InquiryDao {
 
     @Override
     public void insertInquiry(Inquiry inquiry) {
-        String sql = "INSERT INTO inquiry(name, email, contents, created_date) VALUES(?, ?, ?, ?)";
+        String sql = "INSERT INTO inquiry(name, email, contents, created_date_time) VALUES(?, ?, ?, ?)";
         jdbcTemplate.update(
             sql, 
             inquiry.getName(),
             inquiry.getEmail(),
             inquiry.getContents(),
-            inquiry.getCreatedDate()
+            inquiry.getCreatedDateTime()
         );
         
     }
 
     @Override
     public List<Inquiry> getAll() {
-        String sql = "SELECT id, name, email, contents, created_date FROM inquiry";
+        String sql = "SELECT id, name, email, contents, created_date_time FROM inquiry";
         List<Map<String, Object>> resultList = jdbcTemplate.queryForList(sql);
         
         List<Inquiry> inquiryList = new ArrayList<>();
@@ -47,7 +47,7 @@ public class InquiryDaoImpl implements InquiryDao {
             inquiry.setName((String)result.get("name"));
             inquiry.setEmail((String)result.get("email"));
             inquiry.setContents((String)result.get("contents"));
-            inquiry.setCreatedDate(((Timestamp)result.get("created_date")).toLocalDateTime());
+            inquiry.setCreatedDateTime(((Timestamp)result.get("created_date_time")).toLocalDateTime());
             
             inquiryList.add(inquiry);
         }
