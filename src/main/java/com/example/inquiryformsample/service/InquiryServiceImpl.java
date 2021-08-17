@@ -27,5 +27,12 @@ public class InquiryServiceImpl implements InquiryService {
     public List<Inquiry> getAll() {
         return inquiryDao.getAll();
     }
+
+    @Override
+    public void update(Inquiry inquiry) {
+        if(inquiryDao.updateInquiry(inquiry) == 0) {
+            throw new InquiryNotFoundException("can't find the same ID");
+        }
+    }
     
 }
