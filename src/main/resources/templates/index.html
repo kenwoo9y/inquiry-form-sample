@@ -2,22 +2,40 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8">
+        <!-- Bootstrap CSS -->
+        <link th:href="@{/webjars/bootstrap/4.4.1-1/css/bootstrap.min.css}" rel="stylesheet"/>
+
         <title th:text="${title}">Insert title here</title>
     </head>
     
     <body>
-        <h1 th:text="${title}">title</h1>
-        <table>
-            <tr>
-                <th>id</th><th>name</th><th>email</th><th>contents</th><th>datetime</th>
-            </tr>
-            <tr th:each="inquiry : ${inquiries}">
-                <td th:text="${inquiry.id}">1</td>
-                <td th:text="${inquiry.name}"></td>
-                <td th:text="${inquiry.email}"></td>
-                <td th:text="${inquiry.contents}"></td>
-                <td th:text="${inquiry.createdDateTime}"></td>
-            </tr>
-        </table>
+        <div class="container">
+            <h1 th:text="${title}">title</h1>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">name</th>
+                        <th scope="col">email</th>
+                        <th scope="col">contents</th>
+                        <th scope="col">datetime</th>
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    <tr th:each="inquiry : ${inquiries}">
+                        <td th:text="${inquiry.id}">1</td>
+                        <td th:text="${inquiry.name}"></td>
+                        <td th:text="${inquiry.email}"></td>
+                        <td th:text="${inquiry.contents}"></td>
+                        <td th:text="${inquiry.createdDateTime}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- jQuery, Bootstrap JS -->
+        <script th:href="@{/webjars/jquery/3.5.0/js/jquery.min.js}"></script>
+        <script th:href="@{/webjars/bootstrap/4.4.1-1/js/bootstrap.min.js}"></script>
     </body>
 </html>
