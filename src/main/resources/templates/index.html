@@ -25,10 +25,10 @@
                 <tbody>
                     <tr th:each="inquiry : ${inquiries}">
                         <td th:text="${inquiry.id}">1</td>
-                        <td th:text="${inquiry.name}"></td>
-                        <td th:text="${inquiry.email}"></td>
-                        <td th:text="${inquiry.contents}"></td>
-                        <td th:text="${inquiry.createdDateTime}"></td>
+                        <td th:text="${inquiry.name}">AAA</td>
+                        <td th:text="${inquiry.email}">aaa@example.com</td>
+                        <td th:text="${inquiry.contents}">Hello</td>
+                        <td th:text="${inquiry.createdDateTime}">2021-08-10 08:34:19</td>
                     </tr>
                 </tbody>
             </table>
