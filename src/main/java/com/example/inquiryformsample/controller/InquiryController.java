@@ -29,13 +29,13 @@ public class InquiryController {
         this.inquiryService = inquiryService;
     }
 
-    @GetMapping
-    public String index(Model model) {
+    @GetMapping("/list")
+    public String list(Model model) {
         List<Inquiry> inquiries = inquiryService.getAll();
         model.addAttribute("inquiries", inquiries);
-        model.addAttribute("title", "Inquiry Index");
+        model.addAttribute("title", "Inquiry List");
 
-        return "index";
+        return "list";
     }
 
     @GetMapping("/form")
