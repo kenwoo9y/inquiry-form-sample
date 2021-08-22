@@ -29,6 +29,13 @@ public class InquiryController {
         this.inquiryService = inquiryService;
     }
 
+    @GetMapping
+    public String index(Model model) {
+        model.addAttribute("title", "Inquiry Form Sample");
+
+        return "index";
+    }
+
     @GetMapping("/list")
     public String list(Model model) {
         List<Inquiry> inquiries = inquiryService.getAll();

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <!-- Bootstrap CSS -->
+        <link th:href="@{/webjars/bootstrap/4.4.1-1/css/bootstrap.min.css}" rel="stylesheet"/>
+
+        <title th:text="${title}">Insert title here</title>
+    </head>
+    
+    <body style="padding-top:5rem">
+        <div th:replace="~{header/navigation::navigation}"></div>
+        
+        <div class="container">
+            <h1 th:text="${title}">title</h1>
+        </div>
+
+        <!-- jQuery, Bootstrap JS -->
+        <script th:href="@{/webjars/jquery/3.5.0/js/jquery.min.js}"></script>
+        <script th:href="@{/webjars/bootstrap/4.4.1-1/js/bootstrap.min.js}"></script>
+    </body>
+</html>
