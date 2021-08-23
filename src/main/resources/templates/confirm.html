@@ -2,33 +2,49 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8">
+        <!-- Bootstrap CSS -->
+        <link th:href="@{/webjars/bootstrap/4.4.1-1/css/bootstrap.min.css}" rel="stylesheet"/>
+
         <title th:text="${title}">Insert title here</title>
     </head>
     
-    <body>
-        <h1 th:text="${title}">Title</h1>
+    <body style="padding-top:5rem">
+        <div th:replace="~{header/navigation::navigation}"></div>
 
-        <p>Please confirm the input contents</p>
-        <p th:text="${inquiryForm.name}"></p>
-
-        <div th:object="${inquiryForm}">
-            <p th:text="*{name}"></p>
-            <p th:text="*{email}"></p>
-            <p th:text="*{contents}"></p>
-
-            <form method="post" action="#" th:action="@{/inquiry/form}">
-                <input type="hidden" name="name" th:value="*{name}">
-                <input type="hidden" name="email" th:value="*{email}">
-                <input type="hidden" name="contents" th:value="*{contents}">
-                <input type="submit" value="Go Back">
-            </form>
+        <div class="container">
+            <h1 th:text="${title}">Title</h1>
+    
+            <p>Please confirm the input contents</p>
             
-            <form method="post" action="#" th:action="@{/inquiry/complete}">
-                <input type="hidden" name="name" th:value="*{name}">
-                <input type="hidden" name="email" th:value="*{email}">
-                <input type="hidden" name="contents" th:value="*{contents}">
-                <input type="submit" value="Complete">
-            </form>
+            <div th:object="${inquiryForm}">
+                <div class="mb-5">
+                    <ul class="list-group">
+                        <li th:text="*{name}" class="list-group-item"></li>
+                        <li th:text="*{email}" class="list-group-item"></li>
+                        <li th:text="*{contents}" class="list-group-item"></li>
+                    </ul>
+                </div>
+    
+                <form method="post" action="#" th:action="@{/inquiry/form}">
+                    <input type="hidden" name="name" th:value="*{name}">
+                    <input type="hidden" name="email" th:value="*{email}">
+                    <input type="hidden" name="contents" th:value="*{contents}">
+                    <button type="submit" class="btn btn-warning">Go Back</button>
+                </form>
+                
+                <br>
+                
+                <form method="post" action="#" th:action="@{/inquiry/complete}">
+                    <input type="hidden" name="name" th:value="*{name}">
+                    <input type="hidden" name="email" th:value="*{email}">
+                    <input type="hidden" name="contents" th:value="*{contents}">
+                    <button type="submit" class="btn btn-success">Complete</button>
+                </form>
+            </div>
         </div>
+
+        <!-- jQuery, Bootstrap JS -->
+        <script th:href="@{/webjars/jquery/3.5.0/js/jquery.min.js}"></script>
+        <script th:href="@{/webjars/bootstrap/4.4.1-1/js/bootstrap.min.js}"></script>
     </body>
 </html>
