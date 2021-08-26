@@ -20,7 +20,7 @@ public class Inquiry {
         this.createdDateTime = createdDateTime;
     }
 
-    public int getId() {
+	public int getId() {
 		return id;
 	}
 
@@ -55,7 +55,7 @@ public class Inquiry {
 	public LocalDateTime getCreatedDateTime() {
 		return createdDateTime;
 	}
-    
+
 	public void setCreatedDateTime(LocalDateTime createdDateTime) {
 		this.createdDateTime = createdDateTime;
 	}
