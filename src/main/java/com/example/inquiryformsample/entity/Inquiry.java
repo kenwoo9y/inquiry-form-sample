@@ -4,21 +4,21 @@ import java.time.LocalDateTime;
 
 public class Inquiry {
 
-    private int id;
-    private String name;
-    private String email;
-    private String contents;
-    private LocalDateTime createdDateTime;
+	private int id;
+	private String name;
+	private String email;
+	private String contents;
+	private LocalDateTime createdDateTime;
 
-    public Inquiry() {}
+	public Inquiry() {}
 
-    public Inquiry(int id, String name, String email, String contents, LocalDateTime createdDateTime) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.contents = contents;
-        this.createdDateTime = createdDateTime;
-    }
+	public Inquiry(int id, String name, String email, String contents, LocalDateTime createdDateTime) {
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.contents = contents;
+		this.createdDateTime = createdDateTime;
+	}
 
 	public int getId() {
 		return id;
