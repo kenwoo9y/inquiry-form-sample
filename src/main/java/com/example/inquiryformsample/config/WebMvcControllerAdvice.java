@@ -13,14 +13,11 @@ import org.springframework.web.bind.annotation.InitBinder;
 @ControllerAdvice
 public class WebMvcControllerAdvice {
 
-	/*
-	 * This method changes empty character to null
-	 */
-    @InitBinder
-    public void initBinder(WebDataBinder dataBinder) {
-        dataBinder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
-    }
-    
+	@InitBinder
+	public void initBinder(WebDataBinder dataBinder) {
+		dataBinder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
+	}
+
 	@ExceptionHandler(EmptyResultDataAccessException.class)
 	public String handleException(EmptyResultDataAccessException e,Model model) {
 		model.addAttribute("message", e);
